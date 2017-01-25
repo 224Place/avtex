@@ -6100,3 +6100,29 @@ over web page, it's easier to overriding the bootstrap CSS in this specific elem
     width: 100%;
     min-width: 222px;
 }
+
+/* Prevent the logo from getting too small, except for mobile 
+
+In order to keep the logo any bigger than 50px, the header height should be 
+increased. For example, 
+
+.yamm .navbar-inner, .yamm .container {
+    min-height: 100px;
+}
+a.navbar-brand, a.navbar-brand img {
+    min-height: 100px !important;
+}
+
+
+*/
+
+@media (min-width: 1024px) {
+    a.navbar-brand, a.navbar-brand img {
+        min-height: 53px !important;
+    }
+    
+    .navbar-brand img {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+}
