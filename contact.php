@@ -1,6 +1,6 @@
 <?php
 	// ========== Enter your email address here ========== //
-	$to = 'erinlambro@gmail.com';//"info@avtexcommercial.com";
+	$to = "info@avtexcommercial.com";
         
         /* This is bad practice to access the $_POST directly */
         $post = array_intersect_key($_POST, array_flip(['name','email','message', 'subject']));
