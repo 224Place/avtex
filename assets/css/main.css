@@ -6089,14 +6089,14 @@ a.changecolor {
 a single column even on large screens. Since this same HTML is copied on 
 over web page, it's easier to overriding the bootstrap CSS in this specific element */
 
-#contact-form #contactform .row, #contact-form #contactform .col-sm-6 {
+#mainoverwrite #contactform .row, #mainoverwrite #contactform .col-sm-6 {
     margin: 0;
     width: 100%;
     padding: 0;
 }
 
-#contact-form #contactform input.form-control,
-#contact-form #contactform textarea.form-control {
+#mainoverwrite #contactform input.form-control,
+#mainoverwrite #contactform textarea.form-control {
     width: 100%;
     min-width: 222px;
 }

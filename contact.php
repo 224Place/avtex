@@ -1,19 +1,24 @@
 <?php
 	// ========== Enter your email address here ========== //
-	$to = "info@avtexcommercial.com";
+	$to = 'erinlambro@gmail.com';//"info@avtexcommercial.com";
+        
+        /* This is bad practice to access the $_POST directly */
+        $post = array_intersect_key($_POST, array_flip(['name','email','message', 'subject']));
 	
 	// Clean up the input values
-	foreach($_POST as $key => $value) {
-		if(ini_get('magic_quotes_gpc'))
-			$_POST[$key] = stripslashes($_POST[$key]);
-		
-		$_POST[$key] = htmlspecialchars(strip_tags($_POST[$key]));
+	foreach($post as $key => $value) {
+		if(ini_get('magic_quotes_gpc')) {
+			$post[$key] = stripslashes($post[$key]);
+                }		
+		$post[$key] = htmlspecialchars(strip_tags($post[$key]));
 	}
 	
 	// Assign the input values to variables for easy reference
-	$name = $_POST["name"];
-	$email = $_POST["subject"];
-	$message = $_POST["message"];
+	$name = $post["name"];
+	$email = $post["email"];
+	$message = $post["message"];
+        // Set  default for the subject. The footer form does not have a subject field
+        $subject = isset($post['subject']) ? $post['subject'] : 'AVTEX: Message from ' . $name;
 	
 	// Check input values for errors
 	$errors = array();
